@@ -18,6 +18,8 @@
   
   --gray-900: #0a0a0a;
   --gray-800: #111111;
+  --gray-200: #c1c1c1;
+  --gray-100: #e9e9e9;
 }
 
 body {
@@ -27,7 +29,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   
   background: var(--gray-900);
-  color: var(--purple-100);
+  color: var(--gray-100);
 
   width: 100%;
   height:  100vh;
@@ -52,8 +54,6 @@ body {
   
 }
 
-
-
 .container .hero {
   line-height: 0;
   font-family: 'Kanit';
@@ -67,7 +67,7 @@ body {
 .container .hero p {
   line-height: 1.6;
   font-weight: 400;
-  color: white;
+  color: var(--gray-200);
   width: 70%;
   text-align: justify;
 }

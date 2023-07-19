@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  
+  <title>Space Pic's</title>
+</head>
+<body>
+  <main class="container">
+
+    <div class="layout-div">
+      <div class="hero">
+        <h2>Welcome to</h2>
+        <img src="./assets/spacepics-logo.svg" alt="">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta quae 
+          vero aut ullam cumque animi tempore, non quasi porro est atque, nostrum
+        </p>
+      </div>
+
+      <form id="date-form" class="form-container">
+        <div class="form-inputs">
+          <input 
+            type="text" 
+            placeholder="mm-dd-yyyy" 
+            maxlength="10"
+            class="date-input" 
+          />
+          <button type="button" id="generate">Generate image</button>
+        </div>
+        <span id="info-message">Escreva uma data especial para você.</span>
+      </form>
+    </div>
+
+  </main>
+
+  <section class="pics-container">
+    <span class="empty-pic hide">voce ainda gerou nenhuma imagem. 
+      <button type="button">
+        Clique aqui 
+      </button>
+      para gerar uma imagem
+    </span>
+  </section>
+</body>
+</html>

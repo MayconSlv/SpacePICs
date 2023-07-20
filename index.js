@@ -24,6 +24,7 @@ const apiKey = 'rkaCLJfqofxBmUUvwC0q4Fa8fVrhXQ111WQqvONI'
 const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
 
 
+
 function renderImage(imageProps) {
   const title = document.getElementById('image-title')
   const image = document.getElementById('image')
@@ -32,15 +33,24 @@ function renderImage(imageProps) {
   title.innerHTML = imageProps.title
   image.src = imageProps.url
   description.innerHTML = imageProps.explanation
-
 }
+
+const formDate = document.getElementById('date-form')
+formDate.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const date = dataInput.value
+  const splitDate = date.split('-')
+  const dateUrl = `&date=${splitDate[2]}-${splitDate[0]}-${splitDate[1]}`
+  
+
+  fetch(apodUrl + dateUrl)
+    .then((response) => response.json())
+    .then((data) => renderImage(data))
+})
 
 async function getApodData () {
-  const response = await fetch(apodUrl)
-  const data = await response.json()
-  console.log(data)
-
-  renderImage(data)
+  fetch(apodUrl)
+    .then((response) => response.json())
+    .then((data) => renderImage(data))
 }
-
-getApodData()

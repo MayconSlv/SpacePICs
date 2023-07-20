@@ -29,6 +29,15 @@ function renderImage(imageProps) {
   const title = document.getElementById('image-title')
   const image = document.getElementById('image')
   const description = document.getElementById('image-explanation')
+
+  const emptyPic = document.getElementById('empty-pic')
+  const apodPicture = document.getElementById('apodPicture')
+  if (!emptyPic.className.includes('hide')) {
+    emptyPic.classList.add('hide')
+    apodPicture.classList.remove('hide')
+  }
+
+  
   
   title.innerHTML = imageProps.title
   image.src = imageProps.url
@@ -49,8 +58,10 @@ formDate.addEventListener('submit', (e) => {
     .then((data) => renderImage(data))
 })
 
-async function getApodData () {
+const currentButton = document.getElementById('current-date')
+currentButton.addEventListener('click', () => {
   fetch(apodUrl)
     .then((response) => response.json())
     .then((data) => renderImage(data))
-}
+})
+

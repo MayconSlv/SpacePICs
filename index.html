@@ -39,15 +39,15 @@
   </main>
 
   <section class="pics-container">
-    <span class="empty-pic hide">
+    <span id="empty-pic" class="">
       You haven't generated an image yet.
-      <button type="button">
+      <button type="button" id="current-date">
         Click here 
       </button>
       to generate an image.
     </span>
 
-    <div class="pic-container">
+    <div class="pic-container hide" id="apodPicture">
       <h3 id="image-title"></h3>
       <figure class="image-container">
         <img src="" id="image" alt="Image by NASA." />

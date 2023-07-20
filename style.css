@@ -39,14 +39,6 @@
   background: #555;
 }
 
-/* ====== AUXILIAR CLASS ========== */
-
-.hide {
-  display: none;
-}
-
-/* ================================ */
-
 body {
   -webkit-font-smoothing: antialiased;
 
@@ -148,14 +140,14 @@ body {
   align-items: center;
 }
 
-.empty-pic {
+#empty-pic {
   font-size: 1.2rem;
   font-weight: 300;
   width: 380px;
   text-align: center;
 }
 
-.empty-pic button {
+#empty-pic button {
   background: none;
   color: inherit;
   border: none;
@@ -169,9 +161,6 @@ body {
 
   padding: 5rem;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .image-container img{
@@ -183,3 +172,10 @@ body {
   text-align: justify;
 }
 
+/* ====== AUXILIAR CLASS ========== */
+
+.hide {
+  display: none;
+}
+
+/* ================================ */

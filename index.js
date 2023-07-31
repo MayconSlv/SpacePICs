@@ -54,6 +54,10 @@ function handleError() {
     apodPicture.classList.remove('hide')
   }
 
+  // === HIDE TITLE AND IMAGE DESCRIPTION ===
+  document.getElementById('image-title').innerHTML = ''
+  document.getElementById('image-explanation').innerHTML = ''
+
   document.getElementById('warn-message')
   .innerText = 'Date must be between Jun 16, 1995 and Jul 31, 2023.'
 

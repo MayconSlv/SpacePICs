@@ -9,14 +9,12 @@
 :root {
   font-size: 62.5%;
 
-  --purple-800: #11031b;
-  --purple-500: #430D4B;
   --purple-400: #7b188a;
   --purple-300: #8e1da0;
   --purple-200: #b322c9;
   --purple-100: #F5D5E0;
   
-  --gray-900: #0a0a0a;
+  --gray-900: #0f0f0f;
   --gray-800: #111111;
   --gray-200: #c1c1c1;
   --gray-100: #e9e9e9;
@@ -127,7 +125,7 @@ body {
   background: var(--purple-300);
 }
 
-#info-message {
+#warn-message {
   font-size: 1.2rem;
 }
 

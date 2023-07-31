@@ -26,22 +26,38 @@ const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
 
 
 function renderImage(imageProps) {
+  const { title: apodTitle, url, explanation } = imageProps
+
   const title = document.getElementById('image-title')
   const image = document.getElementById('image')
   const description = document.getElementById('image-explanation')
 
   const emptyPic = document.getElementById('empty-pic')
   const apodPicture = document.getElementById('apodPicture')
+
+  if (!emptyPic.className.includes('hide')) {
+    emptyPic.classList.add('hide')
+    apodPicture.classList.remove('hide')
+  }
+  
+  title.innerHTML = apodTitle
+  image.src = url
+  description.innerHTML = explanation
+}
+
+function handleError() {
+  const emptyPic = document.getElementById('empty-pic')
+  const apodPicture = document.getElementById('apodPicture')
+  
   if (!emptyPic.className.includes('hide')) {
     emptyPic.classList.add('hide')
     apodPicture.classList.remove('hide')
   }
 
-  
-  
-  title.innerHTML = imageProps.title
-  image.src = imageProps.url
-  description.innerHTML = imageProps.explanation
+  document.getElementById('warn-message')
+  .innerText = 'Date must be between Jun 16, 1995 and Jul 31, 2023.'
+
+  document.getElementById('image').src = './assets/400.svg'
 }
 
 const formDate = document.getElementById('date-form')
@@ -52,10 +68,21 @@ formDate.addEventListener('submit', (e) => {
   const splitDate = date.split('-')
   const dateUrl = `&date=${splitDate[2]}-${splitDate[0]}-${splitDate[1]}`
   
-
+  
   fetch(apodUrl + dateUrl)
-    .then((response) => response.json())
-    .then((data) => renderImage(data))
+  .then((response) => {
+    if(!response.ok) {
+      throw new Error('Error' + response.status)
+    }
+    return response.json()
+  })
+  .then((data) => renderImage(data))
+  .catch((error) => {
+    handleError()
+    console.log(error)
+  })
+  
+  
 })
 
 const currentButton = document.getElementById('current-date')

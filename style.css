@@ -160,11 +160,11 @@ body {
   overflow: auto;
 
   padding: 5rem;
-
 }
 
 .image-container img{
   width: 100%;
+  margin: 15px 0;
 }
 
 .pic-container #image-explanation {
@@ -179,3 +179,39 @@ body {
 }
 
 /* ================================ */
+
+@media screen and (max-width: 950px) {
+  .form-container .form-inputs {
+    grid-template-columns: 1fr;
+    width: 70%;
+  }
+
+  .layout-div .hero p {
+    width: 100%;
+  }
+
+  .form-container .form-inputs button {
+    padding: 10px 5px;
+  }
+  
+}
+
+@media screen and (max-width: 730px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-div {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .form-container .form-inputs {
+    width: 100%;
+  }
+}
